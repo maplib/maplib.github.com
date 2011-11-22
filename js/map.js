@@ -58,17 +58,19 @@ $( function() {
 			+ ', <a href="http://www.creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
 	}));
 	map.setView( new L.LatLng(
-		localStorage.getItem('lat') || 55.755786,
-		localStorage.getItem('lng') || 37.617633
-	), localStorage.getItem('zoom') || 10 );
+		( localStorage && localStorage.getItem('lat') ) || 55.755786,
+		( localStorage && localStorage.getItem('lng') ) || 37.617633
+	), ( localStorage && localStorage.getItem('zoom') ) || 10 );
 
 	map.on( 'moveend', function() {
 		var center, zoom;
 		center = map.getCenter();
 		zoom = map.getZoom();
-		localStorage.setItem( 'lat', center.lat );
-		localStorage.setItem( 'lng', center.lng );
-		localStorage.setItem( 'zoom', zoom );
+		if (localStorage) {
+			localStorage.setItem( 'lat', center.lat );
+			localStorage.setItem( 'lng', center.lng );
+			localStorage.setItem( 'zoom', zoom );
+		}
 		refreshMapsList();
 	});
 
