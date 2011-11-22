@@ -1,1 +1,30 @@
-Hello, world!
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MapLib</title>
+		<link rel="stylesheet" href="/css/leaflet.css" />
+		<style>
+			#map { position: absolute; left: 0; top: 0; right: 15em; bottom: 0; }
+			#list { position: absolute; width: 15em; top: 0; right: 0; bottom: 0; }
+			#list div { padding: 0.5em; cursor: pointer; font-family: Tahoma; font-size: 10pt; }
+			#list div:hover { background-color: #EEE; }
+			#list div.selected { background-color: #EFE; font-weight: bold; }
+		</style>
+	</head>
+	<body>
+		<div id="map"></div>
+		<div id="list"></div>
+		<script src="/js/jquery-1.7.min.js"></script>
+		<script src="/js/leaflet-0.3.min.js"></script>
+		<script src="/js/map.js"></script>
+		<span id="openstat2218383"></span>
+		<script type="text/javascript">
+			var openstat = { counter: 2218383, next: openstat, track_links: "ext" };
+			(function(d, t, p) {
+				var j = d.createElement(t); j.async = true; j.type = "text/javascript";
+				j.src = ("https:" == p ? "https:" : "http:") + "//openstat.net/cnt.js";
+				var s = d.getElementsByTagName(t)[0]; s.parentNode.insertBefore(j, s);
+			})(document, "script", document.location.protocol);
+		</script>
+	</body>
+</html>
